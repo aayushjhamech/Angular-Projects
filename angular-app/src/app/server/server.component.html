@@ -1,0 +1,6 @@
+<p 
+    [ngStyle]= "{backgroundColor: getColor()}"
+    [ngClass]="{online: serverStatus=== 'online'}">
+    <!-- only adds the class if holds true, in this case 
+    if server is Online, turn the text to White-->
+    The server with ID {{ serverId }} is currently {{ serverStatus }}</p>

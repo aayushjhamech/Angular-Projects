@@ -1,0 +1,55 @@
+<label>Server Name</label>
+<!-- <input
+    type="text"
+    class="form-control"
+    (input)= "onUpdateUsername($event)"> -->
+
+<input
+    type= "text"
+    class= "form-control"
+    placeholder="Username"
+    [(ngModel)]= "username">
+
+<p>{{ username }}</p>
+
+<button 
+    class="btn btn-primary"
+    [disabled]= "username===''"
+    (click)= "username= ''">Add Username</button>
+<hr>
+<input
+    type="text"
+    class="form-control"
+    placeholder="Server Name"
+    [(ngModel)]= "serverName">
+    <!-- two way binding, changes value of all instances 
+    of this variable-->
+<p>{{ serverName }}</p>
+<button
+    class="btn btn-primary"
+    [disabled]= "!allowNewServer"
+    (click)="onCreateServer()"> Add Server </button>
+    <!--the above is event binding, on clicking the button
+    the function is executed, we can also just display some String-->
+<br>
+<!-- <p>{{ serverCreationStatus }}</p> -->
+<p *ngIf="serverCreated">Server was created with name: {{serverName}}</p>
+<!-- <p *ngIf="serverCreated; else noServer">Server was created with name: {{serverName}}</p> -->
+<!-- <ng-template #noServer>
+    <p>Server was not created.</p> For an else statement we can just use a 
+negating ngIf and that can work as an else statement-->
+<hr>
+    <button class="btn btn-primary" (click)="displayDetails()">Display Details</button>
+    <p *ngIf= "accessDetails">The Secret Password is {{secretPass}}</p>
+    <div 
+        *ngFor= "let logItem of log ; let i = index"
+        [ngStyle]="{backgroundColor: i >=4 ? 'blue' : 'white'}"
+        [ngClass]="{'white-text': i>=4}">{{logItem}}
+    </div>
+<!--index gives access to the actual actual index in iteration-->
+<hr>
+<p>Structural directives like Component add or remove elements</p>
+<p>Attribute directives only change the element they are placed on.</p>
+<br>
+<app-server *ngFor="let server of servers"></app-server>
+

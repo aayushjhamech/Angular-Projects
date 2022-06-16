@@ -1,0 +1,4 @@
+Add an input field which updates a property {"username"} via Two way binding
+Output the username property via String Interpolation(in a para below the input)
+Add a button which may only be clicked if the username is not empty String
+upon clicking button, username should be reset to empty String

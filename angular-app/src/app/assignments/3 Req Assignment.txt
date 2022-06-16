@@ -1,0 +1,11 @@
+Add a button which says 'Display Details'
+
+Add a para with any conetent of your choice eg 'Secret password'= "tuna"
+
+Toggle the displaying of that para with the button created in first step
+
+Log all button clicks in an array and output that array below 
+the secret para may be log a timestamp or simply an incoming number
+
+Starting at the 5th log term, give all future items a blue background via 
+ngStyle and white color via ngClass
